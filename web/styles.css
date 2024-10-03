@@ -1,0 +1,169 @@
+/* Font styles */
+@font-face {
+  font-family: "YSHaoShenTi";
+  src: url("fonts/YSHaoShenTi.ttf");
+}
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: url("fonts/Quicksand-Medium.ttf");
+}
+/* Global styles */
+html,
+body {
+  font-size: 16px;
+  font-family: 'Quicksand-Medium', 'YSHaoShenTi';
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  color: #2d3e50;
+}
+header {
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 3em;
+  color: #37474f;
+}
+p:empty {
+  display: none;
+}
+/* Main content styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-width: 300px;
+  gap: 20px;
+}
+.row {
+  width: 30%;
+  padding: 5px 25px 25px 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-top: 25px;
+  min-width: 200px;
+}
+.object-main {
+  flex: 1;
+  padding: 10px 20px 10px 20px;
+  background-color: #ededed;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  margin-top: 25px;
+  text-align: center;
+}
+.object-main h2 {
+  font-size: 1.5em;
+  color: #2d3e50;
+}
+.object-main h3 {
+  font-size: 1.2em;
+  color: #b0bec5;
+}
+.object-main p {
+  font-size: 1em;
+  color: #b0bec5;
+}
+/* Dark mode styles - uses media query */
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  header h1 {
+    color: #ffffff;
+  }
+  .container {
+    background-color: #1e1e1e;
+  }
+  .row {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  .object-main {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  .object-main h2 {
+    color: #ffffff;
+  }
+  .object-main h3 {
+    color: #555555;
+  }
+}
+html.dark-mode,
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+header.dark-mode h1 {
+  color: #ffffff;
+}
+.container.dark-mode {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(104, 104, 104, 0.1);
+}
+.row.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(104, 104, 104, 0.1);
+}
+.object-main.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(104, 104, 104, 0.1);
+}
+.object-main.dark-mode h2 {
+  color: #ffffff;
+}
+.object-main.dark-mode h3 {
+  color: #555555;
+}
+/* Mobile view styles - stack row below object-main */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+  .container {
+    flex-direction: column;
+    /* Vertical alignment on small screens */
+  }
+  .row {
+    width: 90%;
+    /* Overall width */
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+  }
+  .object-main {
+    width: 90%;
+    /* Occupy full width */
+    padding: 10px 15px;
+    /* Shrink the padding to prevent it from exceeding */
+    margin: 0 auto;
+  }
+}
+@media (max-width: 540px) {
+  header h1 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 430px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 310px) {
+  header h1 {
+    font-size: 1em;
+  }
+}

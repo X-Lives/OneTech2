@@ -1,0 +1,211 @@
+@base-font-size: 16px;
+
+@primary-color-light: #2d3e50;
+@secondary-color-light: #b0bec5;
+@heading-color-light: #37474f;
+@background-light: #f5f5f5;
+@container-bg-light: white;
+@shader-light: rgba(0, 0, 0, 0.1);
+
+@primary-color-dark: #ffffff;
+@secondary-color-dark: #555555;
+@heading-color-dark: #ffffff;
+@background-dark: #121212;
+@container-bg-dark: #1e1e1e;
+@shader-dark: rgba(104, 104, 104, 0.1);
+@shader-dark-: rgba(255, 255, 255, 0.1);
+
+/* Font styles */
+@font-face {
+    font-family: "YSHaoShenTi";
+    src: url("./fonts/YSHaoShenTi.ttf");
+}
+@font-face {
+    font-family: "Quicksand-Medium";
+    src: url("./fonts/Quicksand-Medium.ttf");
+}
+
+/* Global styles */
+html, body {
+    font-size: @base-font-size;
+    font-family: 'Quicksand-Medium', 'YSHaoShenTi';
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: @primary-color-light;
+}
+
+header {
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    h1 {
+        font-size: 3em;
+        color: @heading-color-light;
+    }
+}
+
+p:empty {
+    display: none;
+}
+
+/* Main content styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    //box-shadow: 0 4px 8px @shader-light;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    min-width: 300px;
+    gap: 20px;
+}
+
+.row {
+    width: 30%;
+    padding: 5px 25px 25px 20px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+    //box-shadow: 0 4px 8px @shader-light;
+    margin-left: auto;
+    margin-top: 25px;
+    min-width: 200px;
+}
+
+.object-main {
+    flex: 1;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    margin-top: 25px;
+    text-align: center;
+    
+    h2 {
+        font-size: 1.5em;
+        color: @primary-color-light;
+    }
+    h3 {
+        font-size: 1.2em;
+        color: @secondary-color-light;
+    }
+    p {
+        font-size: 1em;
+        color: @secondary-color-light;
+    }
+}
+
+/* Dark mode styles - uses media query */
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: @background-dark;
+        color: @primary-color-dark;
+    }
+    header {
+        h1 {
+            color: @heading-color-dark;
+        }
+    }
+    .container {
+        background-color: @container-bg-dark;
+        //box-shadow: 0 4px 8px @shader-dark;
+    }
+    .row {
+        background-color: @container-bg-dark;
+        color: @primary-color-dark;
+        //box-shadow: 0 4px 8px @shader-dark;
+    }
+    .object-main {
+        background-color: @container-bg-dark;
+        color: @primary-color-dark;
+        //box-shadow: 0 4px 8px @shader-dark;
+        h2 {
+            color: @heading-color-dark;
+        }
+        h3 {
+            color: @secondary-color-dark;
+        }
+    }
+}
+
+html.dark-mode, body.dark-mode {
+    background-color: @background-dark;
+    color: @primary-color-dark;
+}
+header.dark-mode {
+    h1 {
+        color: @heading-color-dark;
+    }
+}
+.container.dark-mode {
+    background-color: @container-bg-dark;
+    box-shadow: 0 4px 8px @shader-dark;
+}
+.row.dark-mode {
+    background-color: @container-bg-dark;
+    color: @primary-color-dark;
+    box-shadow: 0 4px 8px @shader-dark;
+}
+.object-main.dark-mode {
+    background-color: @container-bg-dark;
+    color: @primary-color-dark;
+    box-shadow: 0 4px 8px @shader-dark;
+    h2 {
+        color: @heading-color-dark;
+    }
+    h3 {
+        color: @secondary-color-dark;
+    }
+}
+
+/* Mobile view styles - stack row below object-main */
+@media (max-width: 768px) {
+    header {
+        h1{
+            font-size: 2.5em;
+        }
+    }
+    .container {
+        flex-direction: column; /* Vertical alignment on small screens */
+    }
+    
+    .row {
+        width: 90%; /* Overall width */
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .object-main {
+        width: 90%; /* Occupy full width */
+        padding: 10px 15px; /* Shrink the padding to prevent it from exceeding */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 540px) {
+    header {
+        h1{
+            font-size: 2em;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    header {
+        h1{
+            font-size: 1.5em;
+        }
+    }
+}
+
+@media (max-width: 310px) {
+    header {
+        h1{
+            font-size: 1em;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+# This file is used to exclude files and directories from Git version control.
+data/objects/
+data/sprites/
+
+output/objects_json/
+output/sprites_json/
+output/file_count.json
+
+*.html
+!web/index.html
+!web/Obj.html
